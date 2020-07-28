@@ -22,10 +22,10 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "cbd85ab34afb47003fa7f814a462c24affb1de81ebf172b78cb4e65186ba59d2" "8f5b54bf6a36fe1c138219960dd324aad8ab1f62f543bed73ef5ad60956e36ae" default)))
+    ("36ca8f60565af20ef4f30783aa16a26d96c02df7b4e54e9900a5138fb33808da" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "cbd85ab34afb47003fa7f814a462c24affb1de81ebf172b78cb4e65186ba59d2" "8f5b54bf6a36fe1c138219960dd324aad8ab1f62f543bed73ef5ad60956e36ae" default)))
  '(package-selected-packages
    (quote
-    (ediprolog rjsx-mode ample-theme nord-theme tabbar which-key almost-mono-themes use-package))))
+    (golden-ratio-scroll-screen ediprolog rjsx-mode ample-theme nord-theme tabbar which-key almost-mono-themes use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -42,6 +42,7 @@ There are two things you can do about this warning:
 (set-frame-font "Go Mono 16")
 (global-linum-mode 1)
 (setq inhibit-startup-screen t)
+(load-theme 'nord t)
 
 ; aka gtfo of my project file tree
 (setq backup-directory-alist
@@ -64,11 +65,10 @@ There are two things you can do about this warning:
   :config (tabbar-mode 1))
 
 (use-package nord-theme
-  :ensure t
-  :config (load-theme 'nord t))
+  :defer t)
 
 (use-package ample-theme
-  :ensure t)
+  :defer t)
 
 ; pfft who uses perl anyway
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
